@@ -1,0 +1,120 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6 );
+    font-family: Dotum,'돋움',Helvetica,sans-serif;
+}
+#logo {
+    width: 240px;
+    height: 44px;
+    cursor: pointer;
+}
+
+#header {
+    padding-top: 62px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.wrap {
+    position: relative;
+    height: 100%;
+}
+
+.content {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 460px;
+}
+
+
+h2 {
+    margin: 19px 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+
+.int {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 29px;
+    border: none;
+    background: #fff;
+    font-size: 15px;
+}
+
+input {
+    font-family: Dotum,'돋움',Helvetica,sans-serif;    
+}
+
+.int:focus {
+  border-focus;
+  background: #47FF9C;
+  
+}
+
+#email1:focus {
+  border-focus;
+  background: #47FF9C;
+  
+}
+
+#email2:focus {
+  border-focus;
+  background: #47FF9C;
+  
+}
+.btn_area{
+	height: 100%;
+	width: 100%;
+	outline: none;
+	color: #fff;
+	border: none;
+	font-size: 18px;
+	font-weight: 500;
+	border-radius:5px;
+	letter-spacing: 1px;
+	background: linear-gradient(135deg, #71b7e6, #9b59b6 );
+
+}
+
+#find{
+	Margin : 10px;
+	margin-left : 0px;
+	margin-top : 0px;
+}
+#btnJoin {
+    width: 100%;
+    padding: 9px 0 17px;
+
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    background-color: #6A5ACD;
+    font-size: 17px;
+    font-weight: 300;
+    font-family: Dotum,'돋움',Helvetica,sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

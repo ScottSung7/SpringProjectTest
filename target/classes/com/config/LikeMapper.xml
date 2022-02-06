@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="LikeMapper">
+   
+	<insert id="insertSelect" parameterType="LikeDTO">
+     insert into likes (userid,  genre, estyle, texture, taste,
+				 sauce, spice, carbo, meat, fat, vegi)
+     values(#{userid},#{genre},#{estyle},#{texture},#{taste},
+              #{sauce},#{spice},#{carbo},#{meat},#{fat},#{vegi})
+   </insert>
+
+	<update id="createResultTable" parameterType="string">
+	create table Result${userid}
+(
+genre varchar2(30) not null,
+estyle varchar2(10) not null,
+texture varchar2(30) not null,
+taste varchar2(30) not null,
+sauce varchar2(30) not null,
+spice varchar2(30) not null,
+carbo varchar2(30) not null,
+meat varchar2(30) not null,
+fat varchar2(30) not null,
+vegi varchar2(30) not null
+)
+	</update>
+
+<select id = "getGenre" parameterType="string" resultType="String">
+   select genre from 
+   (select genre,count(*) cnt from likes where userid = #{userid} group by genre order by cnt desc) 
+   where rownum =1
+</select>
+
+<select id = "getestyle" parameterType="string" resultType="String">
+   select estyle from 
+   (select estyle,count(*) cnt from likes where userid = #{userid} group by estyle order by cnt desc) 
+   where rownum =1
+   </select>
+<select id = "gettexture" parameterType="string" resultType="String">
+   select texture from 
+   (select texture,count(*) cnt from likes where userid = #{userid} group by texture order by cnt desc) 
+   where rownum =1
+   </select>
+<select id = "gettaste" parameterType="string" resultType="String">
+   select taste from 
+   (select taste,count(*) cnt from likes where userid = #{userid} group by taste order by cnt desc) 
+   where rownum =1
+   </select>
+<select id = "getsauce" parameterType="string" resultType="String">
+   select sauce from 
+   (select sauce,count(*) cnt from likes where userid = #{userid} group by sauce order by cnt desc) 
+   where rownum =1
+   </select>
+<select id = "getspice" parameterType="string" resultType="String">
+   select spice from 
+   (select spice,count(*) cnt from likes where userid = #{userid} group by spice order by cnt desc) 
+   where rownum =1
+   </select>
+<select id = "getcarbo" parameterType="string" resultType="String">
+   select carbo from 
+   (select carbo,count(*) cnt from likes where userid = #{userid} group by carbo order by cnt desc) 
+   where rownum =1
+   </select>
+<select id = "getmeat" parameterType="string" resultType="String">
+   select meat from 
+   (select meat,count(*) cnt from likes where userid = #{userid} group by meat order by cnt desc) 
+   where rownum =1
+   </select>
+<select id = "getfat" parameterType="string" resultType="String">
+   select fat from 
+   (select fat,count(*) cnt from likes where userid = #{userid} group by fat order by cnt desc) 
+   where rownum =1
+   </select>
+<select id = "getvegi" parameterType="string" resultType="String">
+   select vegi from 
+   (select vegi,count(*) cnt from likes where userid = #{userid} group by vegi order by cnt desc) 
+   where rownum =1
+   </select>
+
+<select id = "menuR10A" parameterType="string" resultType="String">
+  select menu from menu where genre = #{genre}
+   </select>
+   
+<select id = "getMenuR1" parameterType="LikeDTO" resultType="String">
+  select menu from menu where genre = #{genre} and estyle = #{estyle} and texture = #{texture} and taste = #{taste} 
+and sauce = #{sauce} and spice = #{spice} and carbo = #{carbo} and meat = #{meat} and fat = #{fat} and vegi = #{vegi}
+   </select>
+   
+   <select id = "getMenuR9AG" parameterType="LikeDTO" resultType="String">
+  select menu from menu where genre = #{genre} and carbo = #{carbo}
+   </select>
+</mapper>

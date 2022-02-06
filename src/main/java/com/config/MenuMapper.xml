@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MenuMapper">
+   
+   <insert id="menuAdd" parameterType="MenuDTO">
+     insert into menu (restaurant, menu, genre, estyle, texture, taste,
+				 sauce, spice, carbo, meat, fat, vegi, image)
+     values( #{restaurant},#{menu},#{genre},#{estyle},#{texture},#{taste},
+              #{sauce},#{spice},#{carbo},#{meat},#{fat},#{vegi},#{image})
+   </insert>
+      
+   	<select id="menuList" parameterType ="String" resultType="String">
+	select image from menu
+	</select>  
+	
+	<select id="selectedMenu" parameterType="String" resultType="MenuDTO">
+	select restaurant, menu, genre, estyle, texture, taste,
+				 sauce, spice, carbo, meat, fat, vegi, image 
+	from menu where image = #{menu}
+	</select>
+	
+	<select id="menuSearch" parameterType="String" resultType="MenuDTO" >
+	select * from menu where
+	restaurant like '%'||#{search}||'%'
+	or menu like '%'||#{search}||'%'
+	or genre like '%'||#{search}||'%'
+	or estyle like '%'||#{search}||'%'
+	or texture like '%'||#{search}||'%'
+	or taste like '%'||#{search}||'%'
+	or sauce like '%'||#{search}||'%'
+	or spice like '%'||#{search}||'%'
+	or carbo like '%'||#{search}||'%'
+	or fat like '%'||#{search}||'%'
+	or vegi like '%'||#{search}||'%'
+	or image like '%'||#{search}||'%'
+	</select>
+	
+	<select id="getMenuImage" parameterType="String" resultType="String">
+		select image from menu where menu = #{menuFinal}
+	</select>
+	
+	   
+</mapper>

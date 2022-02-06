@@ -1,0 +1,32 @@
+/* reset */
+* {margin:0; padding:0; font-family: 'Lato';}
+li {list-style: none;}
+a {text-decoration: none;}
+
+/* nav */
+#nav {position: fixed; left: 0; top: 0; width: 100%; background-color: rgba(255,255,255,0.3);}
+#nav img {display: left; color: #fff; font-size: 40px;  padding: 5px 5px 5px 15px; font-family: 'Abel' }
+#nav h2 { float: right; color: #fff; font-size: 20px;  padding: 20px 15px; font-family: 'Abel' }
+#nav a{ color: #fff;}
+/* contents */
+#contents {text-align: center; color: #fff;}
+#contents > div {height: 100vh; line-height: 100vh;}
+#contents > div h2 {font-size: 90px; font-weight: 100; text-transform: uppercase;}
+
+
+/* section */
+#section1 {background:radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%); }
+#section2 {background:radial-gradient(ellipse farthest-corner at center top, #cbf49a, #1ea623);}
+#section3 {background:radial-gradient(ellipse farthest-corner at center top, #ffee75, #ff8930);}
+#section4 {background:radial-gradient(ellipse farthest-corner at center bottom, #6beace, #2e9aa4);}
+#section5 {background:radial-gradient(ellipse farthest-corner at center bottom, #69d2fb 0%, #20438E 100%);}
+#section6 {background:radial-gradient(ellipse farthest-corner at center top, #6CEBCF 0%, #38a7aa 100%);}
+
+/* dot */
+#dot {position: fixed; right: 20px; top:50%; transform: translatey(-50%);}
+#dot li a {color: #fff; text-decoration: none; width: 20px; height: 20px; background:rgba(255,255,255,0.5); display: block; margin: 8px; border-radius: 50%;}
+#dot li a em {display: none;}
+#dot li.active a {background:rgba(255,255,255,1);}
+
+ /* footer */
+footer { background: darkgray; height: 60px; }

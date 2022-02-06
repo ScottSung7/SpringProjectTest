@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="RestaurantMapper">
+   
+   <select id="resSearch" parameterType="String" resultType="RestaurantDTO" >
+	select * from restaurant 
+	where
+	restaurant like '%'||#{search}||'%'
+	or phone1 like '%'||#{search}||'%'
+	or phone2 like '%'||#{search}||'%'
+	or phone3 like '%'||#{search}||'%'
+	or addr1 like '%'||#{search}||'%'
+	or addr2 like '%'||#{search}||'%'
+	or image like '%'||#{search}||'%'
+	   
+	</select>
+	
+	<select id="resList" parameterType="string" resultType="RestaurantDTO">
+	select restaurant, phone1, phone2, phone3, addr1, addr2,
+				  image 
+	from restaurant
+	</select>
+	
+</mapper>
